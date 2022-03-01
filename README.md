@@ -4,7 +4,7 @@ Analysis materials for: Bachman, S.L., Cole, S., Yoo, H.J., Nashiro, K., Min, J.
 
 For questions, contact [sbachman\@usc.edu](mailto:sbachman@usc.edu).
 
-## description
+## Description
 
 - `HRV-LC_participant_list.csv`: spreadsheet detailing participants and sessions included for analysis
 - `scripts/`: scripts for statistical analysis
