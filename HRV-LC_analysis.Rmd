@@ -1,0 +1,428 @@
+---
+title             : "Daily heart rate variability biofeedback training decreases locus coeruleus MRI contrast in younger adults"
+author            : "Bachman, S.L., Cole, S., Yoo, H.J., Nashiro, K., Min, J., Mercer, N., Nasseri, P., Thayer, F., Lehrer, P. & Mather, M."
+date              : "2022"
+output: 
+  html_document:
+    toc: true
+    number_sections: false
+---
+
+```{r setup, include = FALSE}
+
+rm(list = ls())
+
+## packages to load
+packages <- c('here', 'dplyr', 'tidyr', 'stringr', 'ggplot2', 'ggpubr', 'oro.nifti',
+              'irr','lme4', 'lmerTest', 'parameters', 'emmeans', 'knitr',
+              'rstatix', 'effectsize', 'MKinfer', 'kableExtra') 
+
+## load all (if not installed, install first)
+package.check <- lapply(
+  packages,
+  FUN = function(x) {
+    if (!require(x, character.only = TRUE)) {
+      install.packages(x, dependencies = TRUE)
+      library(x, character.only = TRUE)
+    }
+  }
+)
+
+## packages that must be installed from github (gg3D, papaja)
+# (install devtools package if necessary)
+if(!"devtools" %in% rownames(installed.packages())) {
+  install.packages("devtools")
+}
+
+if (!'papaja' %in% rownames(installed.packages())){
+  devtools::install_github("crsh/papaja")
+}
+library(papaja)
+
+if (!'gg3D' %in% rownames(installed.packages())) {
+  devtools::install_github("AckerDWM/gg3D")
+}
+library(gg3D)
+
+## create figures directory if it doesn't exist
+if (!dir.exists(here('figures'))) {
+  dir.create(here('figures'))
+}
+
+```
+
+```{r prefs, include = FALSE}
+
+set.seed(23)
+knitr::opts_chunk$set(warning = FALSE,
+                      message = FALSE,
+                      dpi = 400,
+                      cache.extra = knitr::rand_seed)
+
+```
+
+```{r load_data}
+
+load(here('data', 'HRV-LC_data-manuscript_2022-02-23.RData'))
+
+```
+
+```{r run_0_setup}
+
+source(here('scripts', '0_setup.R'))
+
+```
+
+# Methods
+
+## Participants
+
+```{r run_1_exclusions}
+
+source(here('scripts', '1_perform-exclusions.R'))
+
+```
+
+Participants with pre- or post-training MRI assessments:
+
+- Total: `r data_inclexcl %>% filter(completed_MRI == 1) %>% count(label_subject) %>% nrow()` total
+- Younger: `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'YA') %>% count(label_subject) %>% nrow()` 
+- Older: `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'OA') %>% count(label_subject) %>% nrow()`
+
+Total TSE scans: `r data_inclexcl %>% filter(completed_MRI == 1) %>% nrow()`
+
+TSE scans used for LC delineation: `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 1) %>% nrow()` 
+
+Younger participants for whom blood samples were collected: `r data_inclexcl %>% filter(has_PAX == 1) %>% count(label_subject) %>% nrow()`
+
+Participants wtih LC contrast values and/or blood-based measures available at both timepoints: 
+
+- Younger: `r subs_LC_PAX %>% filter(age_group == 'YA') %>% nrow()`
+- Older: `r subs_LC_PAX %>% filter(age_group == 'OA') %>% nrow()`
+
+```{r table1}
+
+kable(table1,
+      caption = 'Sample characteristics',
+      note = '(ref:table1-note)') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+## MRI data analysis
+
+### LC delineation
+
+```{r run_2_calculate_LC_peak}
+
+source(here('scripts', '2_calculate-LC-peak.R'))
+
+```
+
+```{r run_4_ICC_between_raters}
+
+source(here('scripts', '4_ICC-between-raters.R'))
+
+```
+
+```{r run_5_ICC_between_methods}
+
+source(here('scripts', '5_ICC-between-methods.R'))
+
+```
+
+TSE scans excluded prior to LC delineation (also see Supplementary Methods, Section 1 below):
+
+- excessive motion or susceptibility artifact overlapping the LC or pons: n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason %in% c('motion artifact', 'susceptibility artifact overlapping LC')) %>% nrow()`
+- incorrect positioning (n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'incorrect scan positioning') %>% nrow()`)
+- different resolution (n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'different FSE resolution') %>% nrow()`
+
+Then, `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 1, has_LCcontrast == 0) %>% nrow()` TSE scans excluded after LC delineation. This left data from the following participants for analysis:
+
+- `r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'YA') %>% group_by(label_subject, condition) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` younger participants (`r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'YA', condition == 'Osc+') %>% group_by(label_subject) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` Osc+, `r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'YA', condition == 'Osc-') %>% group_by(label_subject) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` Osc-) 
+- `r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'OA') %>% group_by(label_subject, condition) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` older participants (`r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'OA', condition == 'Osc+') %>% group_by(label_subject) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` Osc+, `r data_inclexcl %>% filter(completed_MRI == 1, has_LCcontrast == 1, age_group == 'OA', condition == 'Osc-') %>% group_by(label_subject) %>% summarize(n_sessions = n()) %>% filter(n_sessions == 2) %>% nrow()` Osc-) 
+
+Comparison of peak LC intensity values from the semi-automated and manual methods:
+
+- left LC (*ICC*(C, 1) = `r printnum(icc_methods_leftLC$value, digits = 3)`, *95% CI* = `r printnum(icc_methods_leftLC$lbound, digits = 3)` - `r printnum(icc_methods_leftLC$ubound, digits = 3)`, *p* `r printp(icc_methods_leftLC$p.value, add_equals = TRUE)`)
+- right LC (*ICC*(C, 1) = `r printnum(icc_methods_rightLC$value, digits = 3)`, *95% CI* = `r printnum(icc_methods_rightLC$lbound, digits = 3)` - `r printnum(icc_methods_rightLC$ubound, digits = 3)`, *p* `r printp(icc_methods_rightLC$p.value, add_equals = TRUE)`)
+
+### Calculation of LC MRI contrast
+
+```{r run_6_analyze_LC_distance}
+
+source(here('scripts', '6_analyze-LC-distance.R'))
+
+```
+
+## Statistical analysis
+
+Participants with available blood-based measures at both timepoints (younger only):
+
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_condition == 1) %>% count(label_subject) %>% nrow()` total
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_condition == 1, condition == 'Osc+') %>% count(label_subject) %>% nrow()` Osc+
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_condition == 1, condition == 'Osc-') %>% count(label_subject) %>% nrow()` Osc-
+
+Participants with available blood-based measures and LC contrast values at both timepoints (younger only):
+
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_LC == 1) %>% count(label_subject) %>% nrow()` total
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_LC == 1, condition == 'Osc+') %>% count(label_subject) %>% nrow()` Osc+
+- `r data_inclexcl %>% filter(has_PAX == 1, incl_analysis_CREB_LC == 1, condition == 'Osc-') %>% count(label_subject) %>% nrow()` Osc- 
+
+# Results
+
+## LC contrast decreased in younger participants in the Osc+ condition
+
+```{r run_7_analyze_LC_change}
+
+source(here('scripts', '7_analyze-LC-change.R'))
+
+```
+
+```{r run_8_analyze_LC_change_trainpower}
+
+source(here('scripts', '8_analyze-LC-change-trainpower.R'))
+
+```
+
+Post hoc comparisons of estimated marginal means indicated that at the post- relative to the pre-training timepoint, LC contrast was numerically lower among younger participants in the Osc+ condition (left: *t*(`r printnum(contrasts.LC_time_YA$df[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'left'], digits = 0)`) = `r printnum(contrasts.LC_time_YA$t[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'left'], digits = 3)`, *p* `r printp(contrasts.LC_time_YA$p[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'left'], add_equals = TRUE)`, *d* = `r printnum(cohensd.LC_time_YA$d[cohensd.LC_time_YA$Condition == 'Osc+' & cohensd.LC_time_YA$Hemisphere == 'left'], digits = 3)`; right: *t*(`r printnum(contrasts.LC_time_YA$df[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'right'], digits = 0)`) = `r printnum(contrasts.LC_time_YA$t[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'right'], digits = 3)`, *p* `r printp(contrasts.LC_time_YA$p[contrasts.LC_time_YA$Condition == 'Osc+' & contrasts.LC_time_YA$Hemisphere == 'right'], add_equals = TRUE)`, *d* = `r printnum(cohensd.LC_time_YA$d[cohensd.LC_time_YA$Condition == 'Osc+' & cohensd.LC_time_YA$Hemisphere == 'right'], digits = 3)`) and numerically higher among younger participants in the Osc- condition (left: *t*(`r printnum(contrasts.LC_time_YA$df[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'left'], digits = 0)`) = `r printnum(contrasts.LC_time_YA$t[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'left'], digits = 3)`, *p* `r printp(contrasts.LC_time_YA$p[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'left'], add_equals = TRUE)`, *d* = `r printnum(cohensd.LC_time_YA$d[cohensd.LC_time_YA$Condition == 'Osc-' & cohensd.LC_time_YA$Hemisphere == 'left'], digits = 3)`; right: *t*(`r printnum(contrasts.LC_time_YA$df[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'right'], digits = 0)`) = `r printnum(contrasts.LC_time_YA$t[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'right'], digits = 3)`, *p* `r printp(contrasts.LC_time_YA$p[contrasts.LC_time_YA$Condition == 'Osc-' & contrasts.LC_time_YA$Hemisphere == 'right'], add_equals = TRUE)`, *d* = `r printnum(cohensd.LC_time_YA$d[cohensd.LC_time_YA$Condition == 'Osc-' & cohensd.LC_time_YA$Hemisphere == 'right'], digits = 3)`). 
+
+```{r figure2, fig.width = 12, fig.height = 7}
+
+figure2
+
+```
+
+```{r table2}
+
+table2 <- as.data.frame(
+  rbind(
+    format_lme4_results(params.LC_time_YA),
+    format_lme4_results(params.LC_time_OA)
+  )
+) 
+
+kable(table2,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of linear mixed effects analysis testing the fixed effects of timepoint, training condition, and hemisphere on LC contrast, in younger adults (A) and older adults (B)') %>%
+  pack_rows('A. Younger adults', 1, 8) %>%
+  pack_rows('B. Older adults', 9, 16) %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+```{r posthoc_LC_time}
+
+contrasts_LC_time <- left_join(
+  contrasts.LC_time_YA,
+  cohensd.LC_time_YA %>% select(-c(SE, df))
+) %>%
+  mutate(Contrast = str_to_title(contrast)) %>%
+  select(Condition, Hemisphere, Contrast,
+         Estimate, SE, df, t, d, p)
+
+kable(contrasts_LC_time,
+      digits = c(NA, NA, NA, 3, 3, NA, 3, 3, 3),
+      caption = 'Post hoc comparisons of pre-post LC contrast by training condition and hemisphere') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+## Training oscillatory power was associated with decreases in left LC contrast
+
+Associations between training oscillatory power and change in LC contrast in younger adults:
+- Left LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Left LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Left LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Left LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Left LC'], add_equals = TRUE)`
+- Right LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Right LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Right LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Right LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'YA' & corr_chg_power$hemi == 'Right LC'], add_equals = TRUE)`
+
+Associations between training oscillatory power and change in LC contrast in younger adults:
+- Left LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC'], add_equals = TRUE)`
+- Right LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC'], add_equals = TRUE)`
+
+## The association between training oscillatory power and change in left LC contrast was more negative in males
+
+```{r run_9_analyze_LC_change_sexdiffs}
+
+source(here('scripts', '9_analyze-LC-change-sexdiffs.R'))
+
+```
+
+```{r table3}
+
+table3 <- format_lme4_results(params.LC_change_trainpower_sex)
+
+kable(table3,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of linear mixed effects analysis testing the fixed effects of training oscillatory power, hemisphere, and sex on change in LC MRI contrast.') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+```{r figure3, fig.width = 12, fig.height = 7}
+
+figure3
+
+```
+
+## Decreases in left LC contrast were associated with decreases in CREB activity
+
+```{r run_10_create_fig_RNAseq}
+
+source(here('scripts', '10_create-fig-RNAseq.R'))
+
+```
+
+Results of RNA sequencing in younger participants with available blood-based measures: 
+
+- Interaction between timepoint and condition on expression of genes regulated by CREB transcription factor: *bootstrap z* = `r printnum(-3.30)`, *p* = `r printp(0.001)`
+- Change in CREB activity from pre- to post-training, Osc- condition: *z* = `r printnum(2.70)`, *p* = `r printp(0.008)`
+- Change in CREB activity from pre- to post-training, Osc+ condition: *z* = `r printnum(-0.45)`, *p* = `r printp(0.650)`.
+
+Results of RNA sequencing in younger participants wtih available blood-based measures and LC conrtrast:
+
+- Association between change in LC contrast and change in CREB activity, left LC contrast: *z* = 1.97, *p* = .049 
+- Association between change in LC contrast and change in CREB activity, right LC contrast: *z* = 0.63, *p* = .530
+
+```{r figure4}
+
+figure4
+
+```
+
+# Supplementary Methods
+
+## Section 1. Details of included and excluded TSE scans
+
+Participants that completed pre- and/or post-training MRI assessments including a TSE scan:
+
+- Younger: `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'YA') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` (`r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'YA', condition == 'Osc+') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` Osc+, `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'YA', condition == 'Osc-') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` Osc-)
+- Older: `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'OA') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` (`r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'OA', condition == 'Osc+') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` Osc+, `r data_inclexcl %>% filter(completed_MRI == 1, age_group == 'OA', condition == 'Osc-') %>% group_by(label_subject) %>% summarize(n = n()) %>% nrow()` Osc-) 
+
+Of the above, participants that did not finish the study (no post-training assessment): 
+
+- Younger: `r subs_onlypre$n[subs_onlypre$age_group == 'YA']`
+- Older: `r subs_onlypre$n[subs_onlypre$age_group == 'OA']` 
+
+Older participant without a pre-training TSE scan: n = `r subs_onlypost$n[subs_onlypost$age_group == 'OA']` 
+
+```{r tableS1}
+
+tableS1 <- data_inclexcl %>%
+  filter(completed_MRI == 1) %>%
+  mutate(age_group_name = ifelse(age_group == 'YA', 'Younger',
+                                 ifelse(age_group == 'OA', 'Older', NA)),
+         session_name = ifelse(label_session == 'ses-pre', 'Pre-training', 
+                               ifelse(label_session == 'ses-post', 'Post-training', NA))) %>%
+  group_by(age_group_name, condition, session_name) %>%
+  summarize(n = n()) %>%
+  arrange(desc(age_group_name), desc(condition), desc(session_name)) %>%
+  select(`Age group` = age_group_name,
+         `Training condition` = condition,
+         `Timepoint` = session_name,
+         `Number of assessments` = n)
+
+kable(tableS1, 
+      caption = 'Description of MRI assessments that included MPRAGE and TSE scans.') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+Exclusions based on visual inspection of TSE scans: 
+
+- incorrect positioning (n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'incorrect scan positioning') %>% nrow()`)
+- different resolution (n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'different FSE resolution') %>% nrow()`)
+- susceptibility artifact overlapping the LC or central pons (n = `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'susceptibility artifact overlapping LC') %>% nrow()`) 
+- `r data_inclexcl %>% filter(completed_MRI == 1, include_LCpipeline == 0) %>% filter(exclude_LCpipeline_reason == 'motion artifact') %>% nrow()` remaining scans were excluded due to excessive motion
+
+Agreement between whether scans flagged as included/excluded and rateability: `r printnum(corr_visualqc_manualrating*100, digits = 1)`%
+
+## Section 2. LC delineation parameters and validation
+
+We first upsampled available MPRAGE and FSE scans to twice their native resolution. For this step, the ResampleImage ANTs routine was used, using linear interpolation and pixel type set to 'float'.
+
+Scans included for initial MPRAGE template-building:
+
+- total: `r data_inclexcl %>% filter(include_LCpipeline == 1, include_initMPRtemplate == 1) %>% nrow()` 
+- from younger: `r data_inclexcl %>% filter(include_LCpipeline == 1, include_initMPRtemplate == 1, age_group == 'YA') %>% nrow()` 
+- from older: `r data_inclexcl %>% filter(include_LCpipeline == 1, include_initMPRtemplate == 1, age_group == 'OA') %>% nrow()` 
+
+Scans included for full MPRAGE template-building:
+
+- total: `r data_inclexcl %>% filter(include_LCpipeline == 1) %>% nrow()` 
+- from younger: `r data_inclexcl %>% filter(include_LCpipeline == 1, age_group == 'YA') %>% nrow()` 
+- from older: `r data_inclexcl %>% filter(include_LCpipeline == 1, age_group == 'OA') %>% nrow()`
+
+## Section 3. Manual LC delineation
+
+Comparison of peak LC intensity values from each manual rater:
+
+- left LC: *ICC*(A, 1) = `r printnum(icc_raters_leftLC$value, digits = 3)`, *95% CI* = `r printnum(icc_raters_leftLC$lbound, digits = 3)` - `r printnum(icc_raters_leftLC$ubound, digits = 3)`, *p* `r printp(icc_raters_leftLC$p.value, add_equals = TRUE)`
+- right LC: *ICC*(A, 1) = `r printnum(icc_raters_rightLC$value, digits = 3)`, *95% CI* =`r printnum(icc_raters_rightLC$lbound, digits = 3)` - `r printnum(icc_raters_rightLC$ubound, digits = 3)`, *p* `r printp(icc_raters_rightLC$p.value, add_equals = TRUE)`
+
+# Supplementary Results
+
+## Section 1. Analysis of distance between pre- and post-training peak LC locations
+
+```{r figureS2, fig.width = 12, fig.height = 6}
+
+figureS2
+
+```
+
+```{r tableS2}
+
+tableS2 <- format_lme4_results(
+  params.LC_distance
+)
+
+kable(tableS2,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects analysis testing the fixed effects of training condition, age group and hemisphere on 3-dimensional distance between pre- and post-training peak LC intensity locations.') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+## Section 2. Analysis of training effects on LC contrast
+
+```{r tableS3}
+
+tableS3 <- format_lme4_results(
+  params.LC_time
+)
+
+kable(tableS3,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects analysis testing the fixed effects of timepoint, training condition, age group and hemisphere on LC contrast.') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+## Section 3. Analysis of associations between training power and change in LC contrast
+
+```{r tableS4}
+
+tableS4 <- format_lme4_results(
+  params.LC_change_trainpower
+)
+
+kable(tableS4,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects analysis testing fixed effects of training oscillatory power, age group and hemisphere on change in LC contrast.') %>%
+    kable_styling(full_width = FALSE)
+
+```
+
+## Section 4. Analysis of sex differences in LC contrast change
+
+```{r tableS5}
+
+tableS5 <- format_lme4_results(
+  params.LC_time_sex
+)
+
+kable(tableS5,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects model testing the fixed effects of timepoint, training condition, hemisphere, and sex on LC contrast.') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
