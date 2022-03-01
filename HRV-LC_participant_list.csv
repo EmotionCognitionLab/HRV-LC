@@ -1,0 +1,387 @@
+label_subject,label_session,completed_MRI_TSE,include_LCpipeline,exclude_LCpipeline_reason,include_initMPRtemplate,has_LCcontrast,missing_LCcontrast_reason,LC_manually_rated_by_rater1,LC_manually_rated_by_rater2,has_PAX,time_PAX_at_roomtemp,include_analysis_CREB_condition,include_analysis_CREB_LC
+sub-5001,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5001,ses-post,1,1,NA,0,1,NA,0,0,0,NA,NA,NA
+sub-5002,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5002,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5003,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5003,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5004,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5004,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5005,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5005,ses-post,1,1,NA,0,1,NA,0,0,0,NA,NA,NA
+sub-5006,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5006,ses-pre,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-5007,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5007,ses-post,1,1,NA,1,1,NA,0,0,0,NA,NA,NA
+sub-5008,ses-pre,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-5008,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5009,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5009,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5010,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5010,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5011,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5011,ses-post,1,1,NA,0,1,NA,0,0,0,NA,NA,NA
+sub-5012,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5012,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5013,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5013,ses-pre,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5014,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5014,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5015,ses-pre,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5015,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5016,ses-pre,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5016,ses-post,1,0,susceptibility artifact overlapping LC,0,0,NA,1,1,0,NA,NA,NA
+sub-5017,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5017,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5018,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5018,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5019,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5019,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5020,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5020,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5021,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5021,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-5022,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5022,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5023,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5023,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5024,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5024,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5025,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5025,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5026,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5026,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5027,ses-pre,1,1,NA,1,1,NA,1,1,1,2.1,1,1
+sub-5027,ses-post,1,1,NA,0,1,NA,1,1,1,2.38333333333333,1,1
+sub-5028,ses-pre,1,1,NA,1,1,NA,1,1,1,2.38333333333333,1,0
+sub-5028,ses-post,1,1,NA,0,0,incorrect search space placement,1,1,1,2.33333333333333,1,0
+sub-5029,ses-pre,1,1,NA,1,1,NA,0,0,1,2.3,1,1
+sub-5029,ses-post,1,1,NA,0,1,NA,1,1,1,2.25,1,1
+sub-5030,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5030,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5031,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5031,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5032,ses-pre,1,1,NA,0,1,NA,1,1,1,2.28333333333333,1,1
+sub-5032,ses-post,1,1,NA,0,1,NA,1,1,1,2.56666666666667,1,1
+sub-5033,ses-pre,1,1,NA,1,1,NA,1,1,1,2.23333333333333,1,1
+sub-5033,ses-post,1,1,NA,0,1,NA,1,1,1,2.5,1,1
+sub-5034,ses-pre,1,1,NA,1,1,NA,1,1,1,2.18333333333333,1,1
+sub-5034,ses-post,1,1,NA,0,1,NA,1,1,1,2.43333333333333,1,1
+sub-5035,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5035,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5036,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5036,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5037,ses-pre,1,1,NA,1,1,NA,1,1,1,2.68333333333333,1,1
+sub-5037,ses-post,1,1,NA,0,1,NA,1,1,1,2.48333333333333,1,1
+sub-5038,ses-pre,1,1,NA,0,1,NA,1,1,1,2.6,1,1
+sub-5038,ses-post,1,1,NA,0,1,NA,1,1,1,2.43333333333333,1,1
+sub-5039,ses-pre,1,1,NA,1,1,NA,1,1,1,2.43333333333333,1,1
+sub-5039,ses-post,1,1,NA,0,1,NA,1,1,1,2.36666666666667,1,1
+sub-5040,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-5040,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5041,ses-pre,1,1,NA,0,1,NA,1,1,1,2.38333333333333,1,1
+sub-5041,ses-post,1,1,NA,1,1,NA,1,1,1,2.3,1,1
+sub-5042,ses-pre,1,1,NA,1,1,NA,1,1,1,2.76666666666667,1,1
+sub-5042,ses-post,1,1,NA,1,1,NA,1,1,1,2.41666666666667,1,1
+sub-5043,ses-pre,1,1,NA,0,1,NA,1,1,1,2.71666666666667,1,1
+sub-5043,ses-post,1,1,NA,1,1,NA,1,1,1,2.45,1,1
+sub-5044,ses-pre,1,1,NA,1,1,NA,1,1,1,2.51666666666667,1,1
+sub-5044,ses-post,1,1,NA,1,1,NA,1,1,1,2.5,1,1
+sub-5045,ses-pre,1,1,NA,0,1,NA,1,1,1,2.45,1,1
+sub-5045,ses-post,1,1,NA,1,1,NA,1,1,1,2.53333333333333,1,1
+sub-5046,ses-pre,1,1,NA,1,1,NA,1,1,1,2.4,1,1
+sub-5046,ses-post,1,1,NA,0,1,NA,1,1,1,2.58333333333333,1,1
+sub-5047,ses-pre,1,1,NA,0,1,NA,1,1,1,2.71666666666667,1,1
+sub-5047,ses-post,1,1,NA,1,1,NA,1,1,1,70.2,1,1
+sub-5048,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-5048,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5049,ses-pre,1,1,NA,1,1,NA,1,1,1,2.9,1,1
+sub-5049,ses-post,1,1,NA,0,1,NA,1,1,1,70.1333333333333,1,1
+sub-5050,ses-pre,1,1,NA,1,1,NA,1,1,1,2.83333333333333,1,1
+sub-5050,ses-post,1,1,NA,1,1,NA,1,1,1,70.1,1,1
+sub-5051,ses-pre,1,0,motion artifact,0,0,NA,0,0,1,2.76666666666667,1,0
+sub-5051,ses-post,1,0,motion artifact,0,0,NA,0,0,1,70.05,1,0
+sub-5052,ses-post,1,1,NA,0,1,NA,1,1,1,2.11666666666667,1,0
+sub-5052,ses-pre,1,0,motion artifact,0,0,NA,0,0,1,4.06666666666667,1,0
+sub-5053,ses-post,1,1,NA,0,1,NA,1,1,1,2.21666666666667,1,0
+sub-5053,ses-pre,1,0,motion artifact,0,0,NA,0,0,1,4.13333333333333,1,0
+sub-5054,ses-pre,1,1,NA,0,1,NA,1,1,1,4.4,1,1
+sub-5054,ses-post,1,1,NA,1,1,NA,1,1,1,2.16666666666667,1,1
+sub-5055,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,1,4.3,1,0
+sub-5055,ses-post,0,NA,NA,NA,NA,NA,NA,NA,1,2.06666666666667,1,0
+sub-5056,ses-pre,1,1,NA,0,1,NA,0,0,1,4.2,1,0
+sub-5056,ses-post,1,0,motion artifact,0,0,NA,0,0,1,2,1,0
+sub-5057,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5057,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-5058,ses-pre,1,1,NA,0,1,NA,1,1,1,2.5,1,1
+sub-5058,ses-post,1,1,NA,0,1,NA,1,1,1,2.1,1,1
+sub-5059,ses-pre,1,1,NA,1,1,NA,1,1,1,2.31666666666667,1,0
+sub-5059,ses-post,1,0,motion artifact,0,0,NA,1,1,1,2.23333333333333,1,0
+sub-5060,ses-pre,1,1,NA,1,1,NA,1,1,1,2.45,1,1
+sub-5060,ses-post,1,1,NA,0,1,NA,1,1,1,2.18333333333333,1,1
+sub-5061,ses-pre,1,1,NA,1,1,NA,1,1,1,2.55,1,1
+sub-5061,ses-post,1,1,NA,0,1,NA,1,1,1,2.26666666666667,1,1
+sub-5062,ses-post,1,1,NA,0,1,NA,1,1,1,2.1,1,0
+sub-5062,ses-pre,1,0,motion artifact,0,0,NA,0,0,1,2.36666666666667,1,0
+sub-5063,ses-pre,1,1,NA,0,1,NA,1,1,1,2.41666666666667,1,1
+sub-5063,ses-post,1,1,NA,0,1,NA,1,1,1,2.15,1,1
+sub-6001,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6001,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6002,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6002,ses-post,1,1,NA,0,0,incorrect search space placement,0,0,0,NA,NA,NA
+sub-6003,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6003,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6004,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6004,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6005,ses-pre,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-6005,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-6006,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6006,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6007,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6007,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6008,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6008,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6009,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6009,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6010,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6010,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6011,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6011,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6012,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6012,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6013,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6013,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6014,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6014,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6015,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6015,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6016,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6016,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6017,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6017,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6018,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6018,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6019,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6019,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6020,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6020,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6021,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6021,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6022,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6022,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6023,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6023,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6024,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6024,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-6025,ses-pre,1,1,NA,1,1,NA,1,1,1,2.63333333333333,1,1
+sub-6025,ses-post,1,1,NA,0,1,NA,1,1,1,2.56666666666667,1,1
+sub-6026,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6026,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6027,ses-pre,1,1,NA,0,1,NA,1,1,1,2.53333333333333,1,0
+sub-6027,ses-post,1,0,incorrect scan positioning,0,0,NA,0,0,1,2.51666666666667,1,0
+sub-6028,ses-pre,1,1,NA,1,1,NA,1,1,1,2.48333333333333,1,1
+sub-6028,ses-post,1,1,NA,1,1,NA,1,1,1,2.48333333333333,1,1
+sub-6029,ses-pre,1,1,NA,1,1,NA,1,1,1,2.43333333333333,1,1
+sub-6029,ses-post,1,1,NA,0,1,NA,1,1,1,2.68333333333333,1,1
+sub-6030,ses-pre,1,1,NA,1,1,NA,1,1,1,2.68333333333333,1,1
+sub-6030,ses-post,1,1,NA,0,1,NA,1,1,1,49.6333333333333,1,1
+sub-6031,ses-pre,1,1,NA,1,1,NA,1,1,1,2.6,1,1
+sub-6031,ses-post,1,1,NA,0,1,NA,1,1,1,49.5833333333333,1,1
+sub-6032,ses-pre,1,1,NA,1,1,NA,1,1,1,2.53333333333333,1,1
+sub-6032,ses-post,1,1,NA,0,1,NA,1,1,1,49.5333333333333,1,1
+sub-6033,ses-pre,1,1,NA,1,1,NA,1,1,1,2.41666666666667,1,0
+sub-6033,ses-post,1,1,NA,0,0,incorrect search space placement,1,1,1,49.4833333333333,1,0
+sub-6034,ses-post,1,1,NA,1,1,NA,1,1,1,2.01666666666667,1,0
+sub-6034,ses-pre,1,0,susceptibility artifact overlapping LC,0,0,NA,1,1,1,2.33333333333333,1,0
+sub-6035,ses-pre,1,1,NA,0,1,NA,1,1,1,2.28333333333333,1,1
+sub-6035,ses-post,1,1,NA,1,1,NA,1,1,1,2.51666666666667,1,1
+sub-6036,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,1,2.15,1,0
+sub-6036,ses-post,0,NA,NA,NA,NA,NA,NA,NA,1,2.55,1,0
+sub-6037,ses-pre,1,1,NA,1,1,NA,1,1,1,2.08333333333333,1,1
+sub-6037,ses-post,1,1,NA,1,1,NA,1,1,1,2.63333333333333,1,1
+sub-6038,ses-pre,1,1,NA,1,1,NA,1,1,1,2,1,0
+sub-6038,ses-post,1,0,motion artifact,0,0,NA,0,0,1,2.6,1,0
+sub-6039,ses-pre,1,1,NA,1,1,NA,1,1,1,2.25,1,1
+sub-6039,ses-post,1,1,NA,1,1,NA,1,1,1,2.61666666666667,1,1
+sub-6040,ses-pre,1,1,NA,0,1,NA,1,1,1,2.18333333333333,1,1
+sub-6040,ses-post,1,1,NA,0,1,NA,1,1,1,2.56666666666667,1,1
+sub-6041,ses-pre,1,1,NA,0,1,NA,1,1,1,2.06666666666667,1,1
+sub-6041,ses-post,1,1,NA,0,1,NA,1,1,1,2.53333333333333,1,1
+sub-6042,ses-pre,1,1,NA,1,1,NA,1,1,1,2.15,1,0
+sub-6042,ses-post,1,1,NA,1,0,incorrect search space placement,1,1,1,2.5,1,0
+sub-6043,ses-pre,1,1,NA,1,1,NA,1,1,1,2,1,1
+sub-6043,ses-post,1,1,NA,0,1,NA,1,1,1,2.45,1,1
+sub-6044,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6044,ses-post,1,1,NA,0,1,NA,0,0,0,NA,NA,NA
+sub-6045,ses-pre,1,1,NA,0,1,NA,1,1,1,2.58333333333333,1,1
+sub-6045,ses-post,1,1,NA,1,1,NA,1,1,1,2.2,1,1
+sub-6046,ses-pre,1,1,NA,1,1,NA,1,1,1,2.53333333333333,1,1
+sub-6046,ses-post,1,1,NA,1,1,NA,1,1,1,2.11666666666667,1,1
+sub-6047,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6047,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6048,ses-pre,1,1,NA,1,1,NA,1,1,1,2.71666666666667,1,1
+sub-6048,ses-post,1,1,NA,1,1,NA,1,1,1,2.25,1,1
+sub-6049,ses-pre,1,1,NA,1,1,NA,1,1,1,2.68333333333333,1,1
+sub-6049,ses-post,1,1,NA,1,1,NA,1,1,1,2.3,1,1
+sub-6050,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6050,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6051,ses-pre,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-6051,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6052,ses-pre,1,1,NA,1,1,NA,1,1,1,11.1166666666667,1,1
+sub-6052,ses-post,1,1,NA,1,1,NA,1,1,1,4.73333333333333,1,1
+sub-6053,ses-pre,1,1,NA,1,1,NA,1,1,1,11.3666666666667,1,0
+sub-6053,ses-post,1,0,incorrect scan positioning,0,0,NA,0,0,1,4.68333333333333,1,0
+sub-6054,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6054,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6055,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6055,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6056,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6056,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6057,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-6057,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-6058,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-6058,ses-post,1,1,NA,0,1,NA,0,0,0,NA,NA,NA
+sub-7001,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7001,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7002,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7002,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7003,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7003,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7004,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7004,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7005,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7005,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7006,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7006,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7007,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7007,ses-pre,1,0,susceptibility artifact overlapping LC,0,0,NA,0,0,0,NA,NA,NA
+sub-7008,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7008,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7009,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7009,ses-pre,1,0,motion artifact,0,0,NA,0,1,0,NA,NA,NA
+sub-7010,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7010,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7011,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7011,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7012,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7012,ses-post,1,0,susceptibility artifact overlapping LC,0,0,NA,1,1,0,NA,NA,NA
+sub-7013,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7013,ses-post,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-7014,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7014,ses-post,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-7015,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7015,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7016,ses-pre,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-7016,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-7017,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7017,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7018,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7018,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7019,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7019,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7020,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7020,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7021,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7021,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7022,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7022,ses-post,1,1,NA,1,0,susceptibility artifact overlapping pons,1,1,0,NA,NA,NA
+sub-7023,ses-pre,1,1,NA,0,0,susceptibility artifact overlapping pons,1,1,0,NA,NA,NA
+sub-7023,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7024,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7024,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7025,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7025,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7026,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7026,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7027,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7027,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7028,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7028,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7029,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7029,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7030,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7030,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7031,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7031,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7032,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7032,ses-pre,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-7033,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7033,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7034,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7034,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7035,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-7035,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7036,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-7036,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7037,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-7037,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8001,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8001,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8002,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8002,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8003,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8003,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8004,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8004,ses-post,1,1,NA,1,1,NA,0,0,0,NA,NA,NA
+sub-8005,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8005,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8006,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8006,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8007,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8007,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8008,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8008,ses-post,1,0,incorrect scan positioning,0,0,NA,1,1,0,NA,NA,NA
+sub-8009,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8009,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8010,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8010,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8011,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8011,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8012,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8012,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8013,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8013,ses-pre,1,0,different FSE resolution,0,0,NA,1,1,0,NA,NA,NA
+sub-8014,ses-pre,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-8014,ses-post,1,0,motion artifact,0,0,NA,1,1,0,NA,NA,NA
+sub-8015,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8015,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8016,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8016,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8017,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8017,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8018,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8018,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8019,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8019,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8020,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8020,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8021,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8021,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8022,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8022,ses-post,1,0,motion artifact,0,0,NA,0,0,0,NA,NA,NA
+sub-8023,ses-pre,1,1,NA,0,1,NA,1,0,0,NA,NA,NA
+sub-8023,ses-post,1,0,susceptibility artifact overlapping LC,0,0,NA,0,0,0,NA,NA,NA
+sub-8024,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8024,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8025,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8025,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8026,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8026,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8027,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8027,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8028,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8028,ses-post,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8029,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8029,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8030,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8030,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8031,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8031,ses-post,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8032,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8032,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8033,ses-pre,1,1,NA,0,1,NA,1,1,0,NA,NA,NA
+sub-8033,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8034,ses-pre,1,1,NA,1,1,NA,1,1,0,NA,NA,NA
+sub-8034,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8035,ses-pre,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
+sub-8035,ses-post,0,NA,NA,NA,NA,NA,NA,NA,0,NA,NA,NA
