@@ -138,6 +138,9 @@ format_lme4_results <- function(lme4_params) {
       if (str_detect(rn[i], 'timepoint')) {
         rn[i] <- str_replace_all(rn[i], pattern = 'timepoint', replacement = 'Timepoint')
       }
+      if (str_detect(rn[i], 'label-session')) {
+        rn[i] <- str_replace_all(rn[i], pattern = 'label-session', replacement = 'Timepoint')
+      }
       if (str_detect(rn[i], 'age_group')) {
         rn[i] <- str_replace_all(rn[i], pattern = 'age_group', replacement = 'Age group')
       }
