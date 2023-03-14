@@ -238,11 +238,17 @@ Associations between training oscillatory power and change in LC contrast in you
 - Left LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Left LC'], add_equals = TRUE)`
 - Right LC contrast: *r*(`r corr_chg_power$df[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC']`) = `r printnum(corr_chg_power$r[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC'], digits = 3)`, *95% CI* = `r corr_chg_power$ci[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC']`, *p* `r printp(corr_chg_power$p[corr_chg_power$age_group == 'OA' & corr_chg_power$hemi == 'Right LC'], add_equals = TRUE)`
 
+```{r run_9_analyze_LC_change_topography}
+
+source(here('scripts', '9_analyze-LC-change-topography.R'))
+
+```
+
 ## The association between training oscillatory power and change in left LC contrast was more negative in males
 
-```{r run_9_analyze_LC_change_sexdiffs}
+```{r run_10_analyze_LC_change_sexdiffs}
 
-source(here('scripts', '9_analyze-LC-change-sexdiffs.R'))
+source(here('scripts', '10_analyze-LC-change-sexdiffs.R'))
 
 ```
 
@@ -267,7 +273,7 @@ figure3
 
 ```{r run_10_create_fig_RNAseq}
 
-source(here('scripts', '10_create-fig-RNAseq.R'))
+source(here('scripts', '11_create-fig-RNAseq.R'))
 
 ```
 
@@ -396,30 +402,67 @@ kable(tableS3,
 
 ```
 
-## Section 3. Analysis of associations between training power and change in LC contrast
+## Section 3. Analysis of training effects on caudal and rostral LC contrast
 
 ```{r tableS4}
 
 tableS4 <- format_lme4_results(
-  params.LC_change_trainpower
+  params.LC_time_caudal
 )
 
 kable(tableS4,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects analysis testing the fixed effects of timepoint, training condition, and age group on caudal LC contrast')
+
+```
+
+```{r tableS5}
+
+tableS5 <- format_lme4_results(
+  params.LC_time_rostral
+)
+
+kable(tableS5,
+      digits = c(NA, 3, 3, NA, 3, 3),
+      caption = 'Results of a linear mixed effects analysis testing the fixed effects of timepoint, training condition, and age group on rostral LC contrast')
+
+```
+
+Correlations between training oscillatory power and change in rostral and caudal LC contrast:
+
+```{r table_topo_power_corr}
+
+kable(corr_chg_power_topo,
+      digits = c(NA, NA, 3, 0, NA, 3),
+      caption = '') %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+## Section 4. Analysis of associations between training power and change in LC contrast
+
+```{r tableS4}
+
+tableS6 <- format_lme4_results(
+  params.LC_change_trainpower
+)
+
+kable(tableS6,
       digits = c(NA, 3, 3, NA, 3, 3),
       caption = 'Results of a linear mixed effects analysis testing fixed effects of training oscillatory power, age group and hemisphere on change in LC contrast.') %>%
     kable_styling(full_width = FALSE)
 
 ```
 
-## Section 4. Analysis of sex differences in LC contrast change
+## Section 5. Analysis of sex differences in LC contrast change
 
-```{r tableS5}
+```{r tableS7}
 
-tableS5 <- format_lme4_results(
+tableS7 <- format_lme4_results(
   params.LC_time_sex
 )
 
-kable(tableS5,
+kable(tableS7,
       digits = c(NA, 3, 3, NA, 3, 3),
       caption = 'Results of a linear mixed effects model testing the fixed effects of timepoint, training condition, hemisphere, and sex on LC contrast.') %>%
   kable_styling(full_width = FALSE)
