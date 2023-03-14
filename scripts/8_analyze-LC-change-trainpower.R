@@ -147,7 +147,7 @@ ggsave(filename = here('figures', 'figure2_LC-change.svg'),
 
 # correlation analyses ----------------------------------------------------
 
-# perform spearman correlation analyses
+# perform pearson correlation analyses
 corr_YA_left <- cor.test(~LC_ratio_maxref_chg + Res_logPower_AR_train, 
                          data = LC_ratios_alt %>%
                            filter(age_group == 'YA',
